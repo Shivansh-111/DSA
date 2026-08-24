@@ -45,7 +45,19 @@ class linked_list {
         cout<<"null"<<endl;
 
     }
-    
+    void reverse_list(){
+        Node* front=nullptr;
+        Node* curr= head;
+        Node* prev= nullptr;
+        
+        while(curr!=nullptr){
+            
+            front = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = front;
+        }head = prev;
+    } 
 
 };
 
@@ -56,6 +68,8 @@ int main() {
     ll.push_back(3);
     ll.push_back(4);
     ll.print_ll();
+	ll.reverse_ll();
+	ll.print_ll();
 
 	
 
